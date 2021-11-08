@@ -67,24 +67,24 @@ Create_Info(database:get(Server_Done.."Token_Write"),database:get(Server_Done.."
 local RunBot = io.open("TYLER", 'w')
 RunBot:write([[
 #!/usr/bin/env bash
-cd $HOME/tyler
+cd $HOME/TYLER
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr tyler
 wget "https://raw.githubusercontent.com/DMMARC/TYLER/main/TYLER.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./tyler.lua -p PROFILE --bot=$token
+./tg -s ./TYLER.lua -p PROFILE --bot=$token
 done
 ]])
 RunBot:close()
 local RunTs = io.open("Run", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/tyler
+cd $HOME/TYLER
 while(true) do
 rm -fr ../.telegram-cli
-screen -S tyler -X kill
-screen -S tyler ./tyler
+screen -S TYLER -X kill
+screen -S TYLER ./tyler
 done
 ]])
 RunTs:close()
