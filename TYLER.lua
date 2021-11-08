@@ -24,7 +24,7 @@ if io.open("library/redis.lua","r") then
 io.close(io.open("library/redis.lua","r"))
 print("done => redis.lua")
 else
-io.popen("cd library && wget https://raw.githubusercontent.com/dmmarc/TYLER/main/library/redis.lua") 
+io.popen("cd library && wget https://raw.githubusercontent.com/DMMARC/TYLER/main/library/redis.lua") 
 print("end wget => redis.lua")
 end
 io.popen("mkdir File_Bot") 
