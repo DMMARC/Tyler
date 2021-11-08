@@ -70,7 +70,7 @@ RunBot:write([[
 cd $HOME/tyler
 token="]]..database:get(Server_Done.."Token_Write")..[["
 rm -fr tyler
-wget "https://raw.githubusercontent.com/dmmarc/TYLER/main/TYLER.lua"
+wget "https://raw.githubusercontent.com/DMMARC/TYLER/main/TYLER.lua"
 while(true) do
 rm -fr ../.telegram-cli
 ./tg -s ./tyler.lua -p PROFILE --bot=$token
