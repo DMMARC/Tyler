@@ -2167,7 +2167,7 @@ return false
 end
 end
 end
-if text == 'المطور' or text == 'الدعم' or text == 'مطور' then 
+if text == 'المطور' or text == 'نادي المطور' or text == 'احتاج المطور' then 
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'يرجي ترقيه البوت مشرف في المجموعه لاستخدام الدعم') 
 return false 
@@ -2201,7 +2201,7 @@ Text = 'مرحبا مطوري هناك شخص يحتاج الي مساعده\n'.
 '\n٭ عدد اعضاء المجموعه *~ '..NumMember..'*'..
 '\n٭ اسم المجموعه ~ ['..NameChat..']'..
 '\n٭ رابط المجموعة ~ ['..LinkGp..']'
-sendText(Id_Sudo,Text,0,'md')
+sendText(SUDO,Text,0,'md')
 end,nil) 
 end,nil) 
 end,nil)
