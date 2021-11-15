@@ -2098,7 +2098,7 @@ database:sadd(bot_id..'Muted:User'..msg.chat_id_,msg.sender_user_id_)
 DeleteMessage(msg.chat_id_,{[0] = msg.id_}) 
 end
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if BasicConstructor(msg) then 
 if (msg.content_.ID == "MessagePhoto" or msg.content_.ID == "MessageSticker" or msg.content_.ID == "MessageVideo" or msg.content_.ID == "MessageAnimation" or msg.content_.ID == "MessageUnsupported") and database:get(bot_id.."LoMsg"..msg.chat_id_) then
 database:sadd(bot_id..":IdMsg:"..msg.chat_id_,msg.id_)
@@ -2117,7 +2117,7 @@ database:srem(bot_id..":IdMsg:"..msg.chat_id_,v)
 end
 end
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if msg.content_.ID == 'MessageSticker' and not Manager(msg) then 
 local filter = database:smembers(bot_id.."filtersteckr"..msg.chat_id_)
 for k,v in pairs(filter) do
@@ -2150,7 +2150,7 @@ return false
 end
 end
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if msg.content_.ID == 'MessageAnimation' and not Manager(msg) then 
 local filter = database:smembers(bot_id.."filteranimation"..msg.chat_id_)
 for k,v in pairs(filter) do
@@ -2166,6 +2166,16 @@ DeleteMessage(msg.chat_id_,{[0] = msg.id_})
 return false   
 end
 end
+end
+if text == 'المطور' or text == 'الدعم' or text == 'مطور' then 
+if msg.can_be_deleted_ == false then 
+send(msg.chat_id_, msg.id_,'يرجي ترقيه البوت مشرف في المجموعه لاستخدام الدعم') 
+return false 
+end
+tdcli_function ({ ID = "GetChannelFull", channel_id_ = msg.chat_id_:gsub("-100","")}, function(arg,data) 
+if tonumber(data.member_count_) < tonumber(database:get(bot_id..'Num:Add:Bot') or 0) and not DevSonic(msg) then
+send(msg.chat_id_, msg.id_,'٭ عدد اعضاء المجموعه اقل من *~ {'..(database:get(bot_id..'Num:Add:Bot') or 0)..'* عضو')
+return false
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat) 
@@ -3527,7 +3537,7 @@ elseif text == 'فتح التكرار' and Mod(msg) then
 database:hdel(bot_id.."flooding:settings:"..msg.chat_id_ ,"flood")  
 send(msg.chat_id_, msg.id_,' *✬︙تم فتح التكرار*')
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تحديث' and DevTylerW(msg) then
 dofile('Tyler.lua')  
 send(msg.chat_id_, msg.id_, ' *✬︙تم تحديث جميع الملفات*') 
@@ -3745,7 +3755,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == ("مسح المطورين") and DevTylerW(msg) then
 database:del(bot_id..'Sudo:User')
 send(msg.chat_id_, msg.id_, "\n *✬︙تم مسح قائمة المطورين*  ")
@@ -4103,7 +4113,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == ("مسح الاساسين") and SudoBotCoSu(msg) then
 database:del(bot_id..'Basic:Constructor'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '\n *✬︙تم مسح المنشئين الاساسين*')
@@ -4321,7 +4331,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'مسح المنشئين' and BasicConstructor(msg) then
 database:del(bot_id..'Constructor'..msg.chat_id_)
 texts = ' *✬︙تم مسح المنشئين* '
@@ -4359,7 +4369,7 @@ t = " *✬︙لا يوجد منشئين*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text ==("المنشئ") then
+if text == "المنشئ" then
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local admins = data.members_
 for i=0 , #admins do
@@ -4367,15 +4377,25 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 owner_id = admins[i].user_id_
 tdcli_function ({ID = "GetUser",user_id_ = owner_id},function(arg,b) 
 if b.first_name_ == false then
-send(msg.chat_id_, msg.id_," *✬︙حساب المنشئ محذوف*")
+send(msg.chat_id_, msg.id_," *⋄︙حساب المنشئ محذوف*")
 return false  
 end
-local UserName = (b.username_ or "D03DD")
-send(msg.chat_id_, msg.id_," ✬︙منشئ الكروب » ["..b.first_name_.."](T.me/"..UserName..")")  
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = owner_id,offset_ = 0,limit_ = 1},function(arg,getpro) 
+if getpro.photos_[0] then
+Name = '*المنشئ ⇠* ['..b.first_name_..'](tg://user?id='..b.id_..')\n'
+Name = Name..'*البايو ⇠* ['..getbio(owner_id)..']\n'
+keyboard = {}
+keyboard.inline_keyboard = {{{text = ''..b.first_name_..'', url = "https://t.me/"..b.username_..""}},}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Name)..'&photo='..getpro.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+else
+send(msg.chat_id_,msg.id_,Name)
+end
+end,nil)   
 end,nil)   
 end
 end
-end,nil)   
+end,nil)  
 end
 if text == "رفع منشئ" and msg.reply_to_message_id_ and BasicConstructor(msg) and GetChannelMember(msg) then  
 function start_function(extra, result, success)
@@ -4407,7 +4427,7 @@ send(msg.chat_id_, msg.id_, texts)
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text and text:match("^رفع منشئ (%d+)$") and BasicConstructor(msg) and GetChannelMember(msg) then  
 local userid = text:match("^رفع منشئ (%d+)$")
 database:sadd(bot_id..'Constructor'..msg.chat_id_, userid)
@@ -4464,7 +4484,7 @@ status  = '\n*✬︙تم تنزيله من المنشئين*'
 send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'مسح المدراء' and Constructor(msg) then
 database:del(bot_id..'Manager'..msg.chat_id_)
 texts = ' *✬︙تم مسح المدراء* '
@@ -4592,7 +4612,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text ==("رفع الادمنيه") and Manager(msg) then
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local num2 = 0
@@ -5099,7 +5119,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end  
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تنزيل المطايه' and Mod(msg) then
 database:del(bot_id..'Mote:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم مسح جميع المطايه*')
@@ -5201,7 +5221,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 
 if text == ("تاك للحات") and Mod(msg) then
 local list = database:smembers(bot_id..'Modde:User'..msg.chat_id_)
@@ -5219,7 +5239,7 @@ t = " *✬︙مع الاسف لا يوجد حات*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == ("رفع الحات") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) and GetChannelMember(msg) then  
 if database:get(bot_id..'Lock:Add:Bot'..msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_, msg.id_,' *✬︙تم تعطيل الرفع*') 
@@ -5248,7 +5268,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تنزيل الصخوله' and Mod(msg) then
 database:del(bot_id..'Sakl:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم تنزيل جميع صخوله من الكروب*')
@@ -5298,7 +5318,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تنزيل الجلاب' and Mod(msg) then
 database:del(bot_id..'Motte:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم تنزيل جميع جلاب الكروب*')
@@ -5349,7 +5369,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تنزيل القروده' and Mod(msg) then
 database:del(bot_id..'Motee:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم تنزيل جميع القروده بالكروب*')
@@ -5370,7 +5390,7 @@ t = " *✬︙لا يوجد قرد*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == ("رفع قرد") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) and GetChannelMember(msg) then  
 if database:get(bot_id..'Lock:Add:Bot'..msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_, msg.id_,' *✬︙تم تعطيل الرفع*') 
@@ -5400,7 +5420,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تنزيل الحصونه' and Mod(msg) then
 database:del(bot_id..'Hors:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم تنزيل جميع الحصونه بالكروب*')
@@ -5421,7 +5441,7 @@ t = " *✬︙لا يوجد حصان*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == ("رفع حصان") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) and GetChannelMember(msg) then  
 if database:get(bot_id..'Lock:Add:Bot'..msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_, msg.id_,' *✬︙تم تعطيل الرفع*') 
@@ -5451,7 +5471,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تنزيل البقرات' and Mod(msg) then
 database:del(bot_id..'Bakra:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم تنزيل جميع البقرات بالكروب*')
@@ -5472,7 +5492,7 @@ t = " *✬︙لا يوجد البقره*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == ("رفع بقره") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) and GetChannelMember(msg) then  
 if database:get(bot_id..'Lock:Add:Bot'..msg.chat_id_) and not Constructor(msg) then
 send(msg.chat_id_, msg.id_,' *✬︙تم تعطيل الرفع*') 
@@ -5502,7 +5522,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تنزيل الطليان' and Mod(msg) then
 database:del(bot_id..'Tele:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم تنزيل جميع طليان بالكروب')
@@ -5553,7 +5573,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تنزيل الزواحف' and Mod(msg) then
 database:del(bot_id..'Zahf:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم تنزيل جميع زواحف*')
@@ -5604,7 +5624,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تنزيل جريذيه' and Mod(msg) then
 database:del(bot_id..'Jred:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم تنزيل جميع جريزي*')
@@ -5655,7 +5675,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'مسح المحظورين' and Mod(msg) then
 database:del(bot_id..'Ban:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '\n *✬︙تم مسح المحظورين*')
@@ -5859,7 +5879,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'مسح المكتومين' and Mod(msg) then
 database:del(bot_id..'Muted:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *✬︙تم مسح المكتومين*')
@@ -7021,28 +7041,25 @@ database:del(bot_id.."Link_Group:status"..msg.chat_id_)
 send(msg.chat_id_, msg.id_," *✬︙تم تعطيل الرابط*") 
 return false end
 end
-if text == "المطور" then
-local Text_Dev = database:get(bot_id..'Text_Dev')
-if Text_Dev then 
-send(msg.chat_id_, msg.id_,Text_Dev)
+if text == "المطور" or text == "مطور" then
+local TEXT_SUD = database:get(bot_id..'Tyler:TEXT_SUDO')
+if TEXT_SUDO then 
+send(msg.chat_id_, msg.id_,TEXT_SUDO)
 else
 tdcli_function ({ID = "GetUser",user_id_ = SUDO,},function(arg,result) 
-local function mahmoud(extra, mahmoud, success)
-if mahmoud.photos_[0] then
-local Name = 'مطور البوت\n['..result.first_name_..'](tg://user?id='..result.id_..')\n'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = ''..result.first_name_..'', url = "https://t.me/"..result.username_..""},
-},
-}
+tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = SUDO,offset_ = 0,limit_ = 1},function(arg,getpro) 
+if getpro.photos_[0] then
+Name = '*المطور ~⪼* ['..result.first_name_..'](tg://user?id='..result.id_..')\n'
+Name = Name..'*البايو ~⪼* ['..getbio(SUDO)..']\n'
+keyboard = {}
+keyboard.inline_keyboard = {{{text = ''..result.first_name_..'', url = "https://t.me/"..result.username_..""}},}
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Name)..'&photo='..mahmoud.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Name)..'&photo='..getpro.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
-sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
- end end
-tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = SUDO, offset_ = 0, limit_ = 1 }, mahmoud, nil)
-end,nil)
+send(msg.chat_id_, msg.id_,Name,1, 'md')
+end
+end,nil)   
+end,nil)   
 end
 end
 if text == "تفعيل صورتي" or text == 'تفعيل الصوره' then
@@ -7311,7 +7328,7 @@ database:del(bot_id..'Set:TEXT_SUDO'..msg.chat_id_..':'..msg.sender_user_id_)
 send(msg.chat_id_,msg.id_,' *✬︙تم حفظ كليشة المطور*')
 return false
 end
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
 if text == 'تعين الايدي' and Manager(msg) and GetChannelMember(msg) then  
 database:setex(bot_id.."CHENG:ID"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
 local Text= [[
@@ -8094,8 +8111,8 @@ local photo = database:get(bot_id.."Add:Rd:Sudo:Photo"..text)
 local video = database:get(bot_id.."Add:Rd:Sudo:Video"..text)
 local document = database:get(bot_id.."Add:Rd:Sudo:File"..text)
 local audio = database:get(bot_id.."Add:Rd:Sudo:Audio"..text)
------------------------------------------------------------------------- امـيـر الـدلـيـم
------------------------------------------------------------------------- امـيـر الـدلـيـم
+------------------------------------------------------------------------ سونيك
+------------------------------------------------------------------------ سونيك
 if text1 then 
 send(msg.chat_id_, msg.id_,text1)
 database:sadd(bot_id..'Spam:Texting'..msg.sender_user_id_,text) 
