@@ -2167,7 +2167,35 @@ return false
 end
 end
 end
-
+tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat) 
+local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
+local NameChat = chat.title_
+NameChat = NameChat:gsub('"',"") 
+NameChat = NameChat:gsub('"',"") 
+NameChat = NameChat:gsub("`","") 
+NameChat = NameChat:gsub("*","") 
+NameChat = NameChat:gsub("{","") 
+NameChat = NameChat:gsub("}","") 
+local IdChat = msg.chat_id_
+local NumMember = data.member_count_
+local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
+if linkgpp.ok == true then 
+LinkGp = linkgpp.result
+else
+LinkGp = 'لا يوجد'
+end
+Text = 'مرحبا مطوري هناك شخص يحتاج الي مساعده\n'..
+'\n٭ اسمه ~ '..Name..''..
+'\n٭ ايدي المجموعه ~ `'..IdChat..'`'..
+'\n٭ عدد اعضاء المجموعه *~ '..NumMember..'*'..
+'\n٭ اسم المجموعه ~ ['..NameChat..']'..
+'\n٭ رابط المجموعة ~ ['..LinkGp..']'
+sendText(Id_Sudo,Text,0,'md')
+end,nil) 
+end,nil) 
+end,nil)
+end
 if text == 'تفعيل' and Sudo(msg) and GetChannelMember(msg) then
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,' ✬︙عذرا يرجى ترقيه البوت مشرف !')
