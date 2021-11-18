@@ -10157,7 +10157,7 @@ datainline = {
 elseif database:sismember(bot_id..'Special:User'..Chat_id,OnID) then
 datainlineText = "لديه رتبه مميز"
 datainline = {
-{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."mod"..OnID}},
+{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."Mod"..OnID}},
 {{text = '⋄ مدير',callback_data=data.sender_user_id_.."Manager"..OnID}},
 {{text = '⋄ منشئ',callback_data=data.sender_user_id_.."Constructor"..OnID}},
 {{text = '⋄ منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..OnID}},
@@ -10168,7 +10168,7 @@ else
 datainlineText = "لا يمتلك رتبه"
 datainline = {
 {{text = '⋄ مميز',callback_data=data.sender_user_id_.."Special"..OnID}},
-{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."mod"..OnID}},
+{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."Mod"..OnID}},
 {{text = '⋄ مدير',callback_data=data.sender_user_id_.."Manager"..OnID}},
 {{text = '⋄ منشئ',callback_data=data.sender_user_id_.."Constructor"..OnID}},
 {{text = '⋄ منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..OnID}},
@@ -10201,7 +10201,7 @@ datainline = {
 elseif database:sismember(bot_id..'Special:User'..Chat_id,OnID) then
 datainlineText = "لديه رتبه مميز"
 datainline = {
-{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."mod"..OnID}},
+{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."Mod"..OnID}},
 {{text = '⋄ مدير',callback_data=data.sender_user_id_.."Manager"..OnID}},
 {{text = '⋄ منشئ',callback_data=data.sender_user_id_.."Constructor"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
@@ -10211,7 +10211,7 @@ else
 datainlineText = "لا يمتلك رتبه"
 datainline = {
 {{text = '⋄ مميز',callback_data=data.sender_user_id_.."Special"..OnID}},
-{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."mod"..OnID}},
+{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."Mod"..OnID}},
 {{text = '⋄ مدير',callback_data=data.sender_user_id_.."Manager"..OnID}},
 {{text = '⋄ منشئ',callback_data=data.sender_user_id_.."Constructor"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
@@ -10247,7 +10247,7 @@ datainline = {
 elseif database:sismember(bot_id..'Special:User'..Chat_id,OnID) then
 datainlineText = "لديه رتبه مميز"
 datainline = {
-{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."mod"..OnID}},
+{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."Mod"..OnID}},
 {{text = '⋄ مدير',callback_data=data.sender_user_id_.."Manager"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10256,7 +10256,7 @@ else
 datainlineText = "لا يمتلك رتبه"
 datainline = {
 {{text = '⋄ مميز',callback_data=data.sender_user_id_.."Special"..OnID}},
-{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."mod"..OnID}},
+{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."Mod"..OnID}},
 {{text = '⋄ مدير',callback_data=data.sender_user_id_.."Manager"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10290,7 +10290,7 @@ datainline = {
 elseif database:sismember(bot_id..'Special:User'..Chat_id,OnID) then
 datainlineText = "لديه رتبه مميز"
 datainline = {
-{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."mod"..OnID}},
+{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."Mod"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
 }
@@ -10298,7 +10298,7 @@ else
 datainlineText = "لا يمتلك رتبه"
 datainline = {
 {{text = '⋄ مميز',callback_data=data.sender_user_id_.."Special"..OnID}},
-{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."mod"..OnID}},
+{{text = '⋄ ادمن',callback_data=data.sender_user_id_.."Mod"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
 }
@@ -10466,7 +10466,7 @@ datainline = {
 {{text =Ba,callback_data=data.sender_user_id_.."unBasic"..OnID},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..OnID}},
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10475,7 +10475,7 @@ elseif BasicConstructor(data) then
 datainline = {
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10483,14 +10483,14 @@ datainline = {
 elseif Constructor(data) then
 datainline = {
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
 }
 elseif Manager(data) then
 datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10548,7 +10548,7 @@ bb.inline_keyboard = {
 {{text =Ba,callback_data=data.sender_user_id_.."unBasic"..OnID},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..OnID}},
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10597,7 +10597,7 @@ datainline = {
 {{text =Ba,callback_data=data.sender_user_id_.."unBasic"..OnID},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..OnID}},
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10606,7 +10606,7 @@ elseif BasicConstructor(data) then
 datainline = {
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10614,14 +10614,14 @@ datainline = {
 elseif Constructor(data) then
 datainline = {
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
 }
 elseif Manager(data) then
 datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10679,7 +10679,7 @@ datainline = {
 {{text =Ba,callback_data=data.sender_user_id_.."unBasic"..OnID},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..OnID}},
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10688,7 +10688,7 @@ elseif BasicConstructor(data) then
 datainline = {
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10696,14 +10696,14 @@ datainline = {
 elseif Constructor(data) then
 datainline = {
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
 }
 elseif Manager(data) then
 datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10720,9 +10720,9 @@ bb.inline_keyboard = datainline
 https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('⋄︙ علامه ✅ تعني ان الشخص يمتلك رتبه ويمكنك تنزيلها')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
 return false
 end
-if DAata and DAata:match("^(%d+)unmod(.*)$") then
+if DAata and DAata:match("^(%d+)unMod(.*)$") then
 local notId  = DAata:match("(%d+)")  
-local OnID = DAata:gsub('unmod',''):gsub(notId,'')
+local OnID = DAata:gsub('unMod',''):gsub(notId,'')
 if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
 local notText = '⋄︙ عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
@@ -10761,7 +10761,7 @@ datainline = {
 {{text =Ba,callback_data=data.sender_user_id_.."unBasic"..OnID},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..OnID}},
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10770,7 +10770,7 @@ elseif BasicConstructor(data) then
 datainline = {
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10778,14 +10778,14 @@ datainline = {
 elseif Constructor(data) then
 datainline = {
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
 }
 elseif Manager(data) then
 datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10844,7 +10844,7 @@ datainline = {
 {{text =Ba,callback_data=data.sender_user_id_.."unBasic"..OnID},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..OnID}},
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10853,7 +10853,7 @@ elseif BasicConstructor(data) then
 datainline = {
 {{text =Co,callback_data=data.sender_user_id_.."unConstructor"..OnID},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..OnID}},
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
@@ -10861,14 +10861,14 @@ datainline = {
 elseif Constructor(data) then
 datainline = {
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..OnID},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..OnID}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
 }
 elseif Manager(data) then
 datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..OnID}},
+{{text =Mo,callback_data=data.sender_user_id_.."unMod"..OnID},{text = 'ادمن ',callback_data=data.sender_user_id_.."unMod"..OnID}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..OnID},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..OnID}},
 {{text = 'رجوع',callback_data=data.sender_user_id_.."Bbk"..OnID}},
 {{text = '- Source Tyler .', url="t.me/D03DD"}},
