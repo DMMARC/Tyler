@@ -9615,10 +9615,11 @@ Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '⓵', callback_data="/help1"},{text = '⓶', callback_data="/help2"},{text = '⓷', callback_data="/help3"}},
-{{text = '⓸', callback_data="/help4"},{text = '⓹', callback_data="/help5"}},
-{{text = '⓺', callback_data="/help6"},{text = '⓻', callback_data="/help7"},{text = '⓼', callback_data="/help8"}},
-{{text = '⓽', callback_data="/help9"},{text = '⓵⓪', callback_data="/help10"}},
+{{text = 'اوامر الحمايه', callback_data="/help1"},{text = 'اوامر الادمنيه', callback_data="/help2"}},
+{{text = 'اوامر الاضافه', callback_data="/help3"},{text = 'اوامر المسح', callback_data="/help4"}},
+{{text = 'اوامر المنشئين', callback_data="/help5"},{text = 'اوامر المجموعه', callback_data="/help6"}},
+{{text = 'اوامر التحشيش', callback_data="/help7"},{text = 'اوامر المطورين', callback_data="/help8"}},
+{{text = 'اوامر الاساسي', callback_data="/help9"},{text = 'اوامر العضو', callback_data="/help10"}},
 {{text = '- Source Tyler', url="t.me/D03DD"}},
 }
 local msg_id = msg.id_/2097152/0.5
