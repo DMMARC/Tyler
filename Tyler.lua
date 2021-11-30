@@ -9812,7 +9812,7 @@ end
 send(msg.chat_id_, msg.id_,"✬︙تم مسح الميديا بنجاح")
 end
 if text == "غنيلي" and not database:get(bot_id.."sing:for:me"..msg.chat_id_) then
-data,res = https.request('https://Tyler-api.ml/audios.php')
+data,res = https.request('https://vvvzvv.ml/amirVois/Teland.php')
 if res == 200 then
 audios = json:decode(data)
 if audios.Info == true then
