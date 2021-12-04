@@ -9076,14 +9076,14 @@ local photps = (amir.total_count_ or 0)
 local interaction = Total_Msg(Msguser)
 local rtpg = rtpa
 local amira = {
-" ✬︙اروح فـدوه للـحلوين",
-" ✬︙فديت الصاك محح",
-" ✬︙فـدشـي عمـي",
-" ✬︙دغـيرهـا شبـي هـاذ",
-" ✬︙شهل الگيمر ",
-" ✬︙شهل الصوره تخمبش ",
-" ✬︙فديت الحلو ",
-" ✬︙بـبكن حـلك ",
+" ✬︙يالبى",
+" ✬︙فديت الحلو انا",
+" ✬︙وهـ ي قلبي وهـ",
+" ✬︙غيرها ماحبيتها",
+" ✬︙طالع تجنن ",
+" ✬︙الصوره هذي تجنن ",
+" ✬︙امممممممواح تخبل ",
+" ✬︙ممكن نروح نتمشئ ",
 }
 local rdphoto = amira[math.random(#amira)]
 if not database:get(bot_id..'Bot:Id:Photo'..msg.chat_id_) then  
